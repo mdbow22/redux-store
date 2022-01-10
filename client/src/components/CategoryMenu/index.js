@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useQuery } from '@apollo/client';
-import { useStoreContext } from '../../utils/GlobalState';
-import {
+//import { useStoreContext } from '../../utils/GlobalState';
+/* import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
-} from '../../utils/actions';
+} from '../../utils/actions'; */
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import { updateCategories, updateCurrentCategory } from '../../utils/redux/cartSlice';
