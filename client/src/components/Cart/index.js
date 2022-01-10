@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -7,6 +8,7 @@ import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
+import { cartToggle } from '../../utils/redux/cartSlice';
 import './style.css';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -14,6 +16,10 @@ const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+  //redux stuff
+  const reduxCart = useSelector((state) => state.reduxCart);
+  const reduxDispatch = useDispatch();
 
   useEffect(() => {
     if (data) {
@@ -35,7 +41,8 @@ const Cart = () => {
   }, [state.cart.length, dispatch]);
 
   function toggleCart() {
-    dispatch({ type: TOGGLE_CART });
+    /* dispatch({ type: TOGGLE_CART }); */
+    reduxDispatch(cartToggle());
   }
 
   function calculateTotal() {
@@ -60,7 +67,7 @@ const Cart = () => {
     });
   }
 
-  if (!state.cartOpen) {
+  if (!reduxCart.cartOpen) {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">

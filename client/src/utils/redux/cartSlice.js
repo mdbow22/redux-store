@@ -40,7 +40,7 @@ export const cartSlice = createSlice({
             state.cartOpen = false;
             state.cart.splice(0, state.cart.length);
         },
-        toggleCart: state => {
+        cartToggle: state => {
             state.cartOpen = !state.cartOpen;
         },
         updateCategories: (state, action) => {
@@ -59,7 +59,7 @@ export const {
     updateCartQuantity,
     removeFromCart,
     clearCart,
-    toggleCart,
+    cartToggle,
     updateCategories,
     updateCurrentCategory
 } = cartSlice.actions;
