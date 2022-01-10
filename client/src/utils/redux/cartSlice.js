@@ -13,9 +13,9 @@ export const cartSlice = createSlice({
         updateProducts: (state, action) => {
             state.products = [...state.products, action.products];
         },
-        addToCart: (state, action) => { 
+        add2Cart: (state, action) => { 
             state.cartOpen = true; 
-            state.cart = [...state.cart, action.product];
+            state.cart = [...state.cart, action.payload];
         },
         addMultipleToCart: (state, action) => {
             state.cart = [...state.card, ...action.products];
@@ -23,15 +23,15 @@ export const cartSlice = createSlice({
         updateCartQuantity: (state, action) => {
             state.cartOpen = true;
             state.cart = state.cart.map((product) => {
-                if(action._id === product._id) {
-                    product.purchaseQuantity = action.purchaseQuantity;
+                if(action.payload._id === product._id) {
+                    product.purchaseQuantity = action.payload.purchaseQuantity;
                 }
                 return product;
             })
         },
-        removeFromCart: (state, action) => {
+        cartRemoval: (state, action) => {
             state.cart = state.cart.filter((product) => {
-                return product._id !== action._id;
+                return product._id !== action.payload;
             });
 
             state.cartOpen = state.cart.length > 0;
@@ -54,10 +54,10 @@ export const cartSlice = createSlice({
 
 export const {
     updateProducts,
-    addToCart,
+    add2Cart,
     addMultipleToCart,
     updateCartQuantity,
-    removeFromCart,
+    cartRemoval,
     clearCart,
     cartToggle,
     updateCategories,
