@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
             state.cart = [...state.cart, action.payload];
         },
         addMultipleToCart: (state, action) => {
-            state.cart = [...state.card, ...action.products];
+            state.cart = [...state.cart, ...action.payload];
         },
         updateCartQuantity: (state, action) => {
             state.cartOpen = true;
