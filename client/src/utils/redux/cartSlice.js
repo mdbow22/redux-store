@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
     },
     reducers: {
         updateProducts: (state, action) => {
-            state.products = [...state.products, action.products];
+            state.products = action.payload;
         },
         add2Cart: (state, action) => { 
             state.cartOpen = true; 
@@ -44,10 +44,10 @@ export const cartSlice = createSlice({
             state.cartOpen = !state.cartOpen;
         },
         updateCategories: (state, action) => {
-            state.categories = [...action.categories];
+            state.categories = [...action.payload];
         },
         updateCurrentCategory: (state, action) => {
-            state.currentCategory = action.currentCategory;
+            state.currentCategory = action.payload;
         }
     }
 });
