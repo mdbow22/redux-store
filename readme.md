@@ -24,7 +24,17 @@ On the front end, update the Cart component with your Stripe credentials, or con
 
 ## Usage
 
-The app is a full shopping experience. You can add an item to your cart by clicking 
+The landing page will show you all the available products for purchase along with available categories:
+
+![screenshot of landing page](./screenshots/landing-page.png)
+
+Clicking on a category will filter the products to just that category:
+
+![screenshot of products filtered by electronics](./screenshots/category.png)
+
+When you view your cart, you can see all the items added and quantities, update quantities, and if you're logged in, be taken to stripe to checkout:
+
+![screenshot of page with cart visible](./screenshots/open-cart.png)
 
 ## Questions
 
@@ -32,4 +42,9 @@ Please send any questions to me through github (mdbow22) or by creating an issue
 
 ## Demo
 
-A live demo can be found here: 
+A live demo can be found here: https://vast-chamber-53227.herokuapp.com/
+
+If you do not wish to create an account, you can use the below credentials:
+
+    email: eholt@testmail.com
+    password: password12345
