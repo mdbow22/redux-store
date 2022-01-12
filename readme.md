@@ -26,7 +26,7 @@ On the front end, update the Cart component with your Stripe credentials, or con
 
 The landing page will show you all the available products for purchase along with available categories:
 
-![screenshot of landing page](./screenshots/landing-page.png)
+![screenshot of landing page](./screenshots/landing-page.PNG)
 
 Clicking on a category will filter the products to just that category:
 
