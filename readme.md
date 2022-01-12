@@ -24,6 +24,8 @@ On the front end, update the Cart component with your Stripe credentials, or con
 
 ## Usage
 
+The app is a full shopping experience. You can add an item to your cart by clicking 
+
 ## Questions
 
 Please send any questions to me through github (mdbow22) or by creating an issue on this repo.
